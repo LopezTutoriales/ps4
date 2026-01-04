@@ -1,0 +1,96 @@
+<html manifest="psfree_lapse.cache">
+  <head>
+    <meta charset="utf-8">
+    <title>Jailbreak PS4</title>
+    <style>
+      body {
+        background-color: #252526;
+        color: #cccccc;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      #console {
+        font-family: monospace;
+        background-color: #1e1e1e;
+        color: #cccccc;
+        border: 1px solid #3c3c3c;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 20px;
+        text-align: left;
+      }
+      #jailbreakBtn {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        background: #555555;
+        color: #aaaaaa;
+        cursor: not-allowed;
+        opacity: 0.7;
+        box-shadow: none;
+      }
+      footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>PSFree: Exploit para PS4 7.00 hasta 9.60</h2>
+	<h4>Traducido por Lopez Tutoriales</h4>
+    <div>
+      <button id="jailbreakBtn">Lanzar Jailbreak</button>
+    </div>
+    <div style="margin-top: 15px;">
+      <label style="font-size: 16px;">
+        <input type="checkbox" id="autoRunCheck" disabled>
+        AutoIniciar desactivado
+      </label>
+    </div>
+    <pre id="console"></pre>
+    <footer>
+      UI Hecho por <strong>Feyzee</strong>
+    </footer>
+  </body>
+  <script>
+    // Clear history and prevent back navigation
+    history.replaceState(null, null, 'index.html');
+    var histlength = history.length;
+    history.go(-histlength);
+    // Logging utility
+    const outputConsole = document.getElementById("console");
+    window.log = (msg) => { outputConsole.textContent += msg + "\n"; };
+    // Download progress (% display)
+    function DLProgress(e) {
+      const percent = (Math.round((e.loaded / e.total) * 100));
+      window.log(`[CACHE] Descargando... ${percent}% completado.`);
+    }
+    // On cache complete
+    function DisplayCacheProgress() {
+      window.log(" ");
+      window.log("[EXITO] Cache instalada con exito.");
+      window.log("La pagina se recargara en 3 segundos...");
+      // Delay to show success message before navigation
+      setTimeout(function() { window.log("Recargando..."); }, 2000);
+      // Navigate back to index.html to load the exploit from cache
+      setTimeout(function() { location.reload(); }, 3000);
+    }
+    // Event listeners
+    window.applicationCache.addEventListener("progress", DLProgress, false);
+    window.applicationCache.oncached = function(e) { DisplayCacheProgress(); };
+    window.applicationCache.onupdateready = function(e) { DisplayCacheProgress(); };
+    // Initialization message on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      outputConsole.textContent = ""; // Clear console log
+      window.log("AppCache iniciando descarga...");
+      window.log("Espere, esto puede tomar unos segundos.");
+    });
+  </script>
+</html>
