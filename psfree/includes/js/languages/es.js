@@ -20,9 +20,9 @@ window.lang = {
     "ps4FirmwareSupportedHeader": "Firmware de PS4 soportado",
     "languageHeader": "Idioma",
     "warnings": {
-        "nota1": "Asegurate de eliminar la cache antes de ejecutar el exploit por primera vez",
-        "nota2": "Deja que la cache se complete para una mejor estabilidad",
-        "nota3": "Puede que necesites varios intentos para lograr el jailbreak",
+        "note1": "Asegurate de eliminar la cache antes de ejecutar el exploit por primera vez",
+        "note2": "Deja que la cache se complete para una mejor estabilidad",
+        "note3": "Puede que necesites varios intentos para lograr el jailbreak",
     },
     "secondHostBtn": "Cargar payloads usando GoldHEN's PayLoader - Link Externo",
     "alert": "Aviso importante",
@@ -45,7 +45,7 @@ window.lang = {
     "advancedPayloadHeader":    "Payloads Avanzados",
     "advanced": "Avanzado",
     // payloads.js
-    "linuxOnlyWithGoldHEN": "Los payloads de Linux solo deben cargarse a traves del GoldHEN's PayLoader!",
+    "payloadOnlyWithGoldHEN": "Los payloads .elf deben cargarse a traves del GoldHEN's PayLoader!",
     "busyBinLoader":    "Imposble cargar el Payload porque el servidor de Payloads esta ocupado",
     "binLoaderNotDetected": "GoldHEN's PayLoader no detectado, esta habilitado?!", // For no-webkit firmware
     "disabledBinloader":    "El GoldHEN's PayLoader no esta ejecutandose, cargar el payload usando el exploit?",
